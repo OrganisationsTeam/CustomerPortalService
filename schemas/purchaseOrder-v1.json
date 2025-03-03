@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PurchaseOrder",
+    "description": "Schema for a purchase order",
+    "type": "object",
+    "properties": {
+        "orderNumber": {
+            "type": "string",
+            "description": "The order number"
+        },
+        "orderDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the order was placed"
+        },
+        "customer": {
+            "type": "object",
+            "description": "The customer",
+            "properties": {
+                "customerId": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "customerId",
+                "name"
+            ]
+        },
+        "orderedItem": {
+            "type": "array",
+            "description": "list of ordered items",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "productId",
+                    "quantity"
+                ]
+            }
+        }
+    },
+    "required": [
+        "orderNumber",
+        "orderDate",
+        "customer",
+        "orderedItem"
+    ]
+}
