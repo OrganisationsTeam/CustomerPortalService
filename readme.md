@@ -1,6 +1,11 @@
-CustomerPortal is a Service for creating purchaseOrders and sending it to the OrderService# CustomerPortalService
+# CustomerPortalService
 
-json instance for validation:
+CustomerPortal is a Service for creating purchaseOrders and sending it to the OrderService
+
+## JSON Schema Example
+To validate your purchase order, use the following JSON format:
+
+```json
 {
     "orderNumber": "PO-2023-12345",
     "orderDate": "2023-12-14T10:30:00Z",
